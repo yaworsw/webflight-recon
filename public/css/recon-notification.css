@@ -1,0 +1,28 @@
+#recon-container {
+  padding-top: 40px;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999999;
+}
+#recon-container .notifications {
+  float: right;
+}
+#recon-container .notification {
+  margin-bottom: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  background: black;
+  color: white;
+}
+#recon-container .thumbnail {
+  height: 50px;
+  width: 50px;
+  vertical-align: top;
+}
+
+#recon-container .error {
+  color: red;
+}
