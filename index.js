@@ -1,7 +1,7 @@
 var fs        = require('fs'),
     express   = require('express'),
     path      = require('path'),
-    badEncode = require('./badEncode');
+    badEncode = require('./bad-encode');
 
 var outDir  = __dirname + '/images';
 
