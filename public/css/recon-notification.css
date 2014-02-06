@@ -13,14 +13,22 @@
 #recon-container .notification {
   margin-bottom: 10px;
   margin-right: 10px;
-  padding: 10px;
+  padding: 10px 20px 10px 10px;
   background: black;
   color: white;
+  font-family: Audiowide, Arial;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
 #recon-container .thumbnail {
-  height: 50px;
-  width: 50px;
-  vertical-align: top;
+  height: 30px;
+  width: 53px;
+  vertical-align: middle;
+}
+#recon-container .notification .text {
+  position:relative;
+  left: 10px;
 }
 
 #recon-container .error {

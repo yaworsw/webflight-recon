@@ -48,13 +48,13 @@
         success: function() {
           self.notify({
             thumbnail: img,
-            text:      'Image successfully saved.'
+            text:      'Image Saved!'
           });
         },
         error: function() {
           self.notify({
             class: 'error',
-            text:  'There was an error while trying to save your image.'
+            text:  'Error Saving Image.'
           });
         }
       });
