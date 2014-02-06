@@ -7,8 +7,8 @@
   var getImageData = function(imageElement) {
     var canvas     = document.createElement('canvas'),
         context    = canvas.getContext('2d');
-    canvas.height  = 600;
-    canvas.width   = 800;
+    canvas.width   = 640;
+    canvas.height  = 360;
     context.drawImage(imageElement, 0, 0);
     return canvas.toDataURL('image/png');
   };
