@@ -2,12 +2,21 @@
 
   var cameraKeyCode = 82,
       cameraUrl     = '/camera',
-      canvas        = undefined;
+      imageElement;
+
+  var getImageData = function(imageElement) {
+    var canvas    = document.createElement('canvas'),
+        context   = canvas.getContext('2d');
+    canvas.height = imageElement.height;
+    canvas.width  = imageElement.width;
+    context.drawImage(imageElement, 0, 0);
+    return canvas.toDataURL('image/png');
+  };
 
   var Recon = function(cockpit) {
     console.log("Loading Recon plugin.");
 
-    canvas = $('canvas')[0];
+    imageElement = $('#video')[0]
 
     this.cockpit = cockpit;
 
@@ -30,15 +39,15 @@
 
   Recon.prototype.keyDown = function(e) {
     if (e.keyCode == cameraKeyCode) {
-      var self  = this;
-      var image = canvas.toDataURL();
+      var img   = getImageData(imageElement),
+          self  = this;
       $.ajax({
         type: 'POST',
         url:  cameraUrl,
-        data: { image: image },
+        data: { image: img },
         success: function() {
           self.notify({
-            thumbnail: image,
+            thumbnail: img,
             text:      'Image successfully saved.'
           });
         },
@@ -48,7 +57,7 @@
             text:  'There was an error while trying to save your image.'
           });
         }
-      })
+      });
     }
   };
 
