@@ -1,6 +1,6 @@
 (function() {
 
-  var cameraKeyCode = 82,
+  var cameraKeyCode = 80,
       cameraUrl     = '/recon',
       imageElement;
 
